@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {
+			width: 500px;
+			height: 400px;
+			margin: auto;
+		}
+		input {
+			width: 50px;
+			height: 30px;
+			margin: auto;
+		}
+		#black_overlay {
+			display: none;
+			position: absolute;
+			top: 10%;
+			left: 0%;
+			width: 100%;
+			height: 100%;
+			background-color: black;
+			z-index: 1001;
+			margin: center;
+
+			
+			background-color: rgba(0,0,0,0.7);
+
+		}
+		#lightbox {
+			display: none;
+			position: absolute;
+			top: 25%;
+			left: 25%;
+			width: 50%;
+			height: 50%;
+			padding: 16px;
+			border: 16px solid orange;
+			z-index: 1002;
+			overflow: auto;
+			background-color: white;
+			
+		}
+		.cerrarL {
+			display: none;
+		}
+		.cambioaBlock {
+			display: block;
+		}
+	</style>
+	<script>
+
+		function abrirLightBox() {
+			//alert ('entra en abrirLightBox');
+			var caja1=document.getElementById('black_overlay');
+			
+			document.getElementById('black_overlay').style.display='block';
+			document.getElementById('lightbox').style.display='block';
+			//console.log(document.getElementById('black_overlay').style.display)
+			caja1.classList.toggle('cambioaBlock');
+			//caja2.classList.toggle('cambioaBlock');
+
+		}
+		function cerrarLightBox() {
+			//alert ('entra en cerrarLightBox');
+			//var caja2=document.getElementById('lightbox')
+			var caja1=document.getElementById('black_overlay');
+			document.getElementById('black_overlay').style.display='none';
+			
+			//caja2.classList.toggle('cerrarL');
+			//caja1.classList.toggle('cerrarL');
+		}
+	</script>
+
+</head>
+<body>
+		<input type="button" value="Pulsar" onclick="abrirLightBox()">
+		<div id='black_overlay' >
+			<div id='lightbox'>
+				<a href="#" onclick="cerrarLightBox()"  >enlace</a>
+			</div>
+		</div>
+
+</body>
+</html>
